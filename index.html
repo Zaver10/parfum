@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,600;1,500;1,700&family=GFS+Didot&display=swap");
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: #000;
+        color: white;
+        text-align: center;
+        padding-bottom: 40px;
+      }
+      .main-logo {
+        text-align: center;
+        background: #804279;
+      }
+      .main-text {
+        font-size: 30px;
+        background: rgb(247, 232, 245);
+        color: #000;
+        padding: 15px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-family: "Cormorant", serif;
+        margin: 40px 20px;
+        font-style: italic;
+      }
+      .content {
+        text-align: center;
+      }
+      .content-img {
+        box-shadow: 2px 2px 10px 10px #804279;
+        border-radius: 10px;
+        margin: 20px;
+      }
+      .content-carolina {
+        font-family: "GFS Didot", serif;
+        font-size: 70px;
+
+        padding: 30px;
+        text-transform: uppercase;
+      }
+      .main__text-one,
+      .main-text-three {
+        font-size: 30px;
+        font-family: "Cormorant", serif;
+        margin: 40px;
+        font-style: italic;
+        padding: 40px 20px;
+        background-color: rgb(247, 232, 245);
+        color: #000;
+        border-radius: 25px;
+      }
+      .main__text-one-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        padding-bottom: 30px;
+      }
+      .main__text-one__item {
+        width: 400px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: rgb(247, 232, 245);
+      }
+      .main__text-one__item div {
+        color: #000;
+        font-size: 30px;
+        font-family: "Cormorant", serif;
+        font-style: italic;
+        font-weight: 700;
+      }
+      .main__text-one__item p {
+        color: #000;
+        font-size: 16px;
+        font-family: "GFS Didot", serif;
+        font-weight: 500;
+      }
+      .main__text-one__item a {
+        text-decoration: none;
+        color: #000;
+        font-weight: 800;
+      }
+      .main__text-one__item-img{
+        transform: perspective(300px) rotateY(0deg);
+        transition: transform .9s linear;
+
+      }
+      
+      .main__text-one__item:hover > .main__text-one__item-img{
+        transform: perspective(300px) rotateY(-360deg);
+      }
+     
+      .main-delivery {
+        border-radius: 20px;
+        background-color: rgb(247, 232, 245);
+        margin: 10px 100px;
+        padding-bottom: 20px;
+        text-align: center;
+      }
+      .main__text-two {
+        font-size: 30px;
+        font-family: "Cormorant", serif;
+        margin: 20px;
+        font-style: italic;
+        padding: 40px 20px;
+        color: #000;
+        font-weight: 600;
+      }
+      .main-delivery-title {
+        color: #000;
+        font-size: 30px;
+        font-family: "Cormorant", serif;
+        padding: 20px;
+        font-style: italic;
+        font-weight: 700;
+      }
+      .main-delivery-text {
+        color: #000;
+        font-family: "Cormorant", serif;
+        font-weight: 700;
+        padding: 10px;
+        font-size: 20px;
+      }
+      .main-delivery-item {
+        width: 450px;
+        margin: 40px;
+        border-radius: 20px;
+        background-color: white;
+        padding: 12px;
+        box-shadow: 2px 2px 10px 10px #804279;
+      }
+      .main-delivery-list {
+        max-width: 540px;
+        margin: 0 auto;
+        padding-inline-start: 0;
+        list-style: none;
+        margin-block-start: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+      .faq {
+        max-width: 700px;
+        margin: 20px auto;
+      }
+      .faq-item {
+        border: 1px solid #804279;
+        box-shadow: 2px 2px 3px 3px #804279;
+        text-align: left;
+      }
+      .faq-title {
+        display: block;
+        cursor: pointer;
+        padding: 10px 15px;
+        font-style: italic;
+        transition: 0.2s ease-out;
+        font-size: 20px;
+        font-family: "Cormorant", serif;
+      }
+      .faq-title:hover {
+        background-color: #804279;
+      }
+      .faq-text {
+        display: none;
+        padding: 10px 15px;
+        background-color: rgb(247, 232, 245);
+        color: #000;
+      }
+      .faq-text a {
+        text-decoration: none;
+        color: white;
+        font-weight: 800;
+      }
+      .faq-input {
+        appearance: none;
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      .faq-input:checked ~ .faq-text {
+        display: block;
+      }
+      .faq-input:checked ~ .faq-title {
+        background-color: #804279;
+      }
+      @media (max-width: 800px) {
+        .main-text {
+          font-size: 20px;
+        }
+        .content-carolina {
+          font-size: 50px;
+        }
+        .main-delivery-item {
+          max-width: 300px;
+          margin: 20px auto;
+        }
+       
+        .main__text-one__item {
+          width: 325px;
+        }
+        .main__text-one-list {
+          gap: 15px;
+        }
+        .content-img {
+          width: 500px;
+        }
+        .main__text-one__item-img {
+          width: 100px;
+        }
+        .main-delivery-img {
+          width: 100px;
+        }
+        .faq {
+          margin: 20px 20px;
+        }
+      }
+      @media (max-width: 630px) {
+        .main-delivery-item {
+          width: 200px;
+          margin: 20px;
+        }
+        .main-delivery-title {
+          font-size: 23px;
+        }
+        .main-delivery-text {
+          font-size: 15px;
+        }
+      
+      }
+      @media (max-width: 570px) {
+        .content-img {
+          width: 300px;
+        }
+        .content-carolina {
+          font-size: 30px;
+        }
+        .main__text-one,
+        .main__text-two,
+        .main-text-three {
+          font-size: 20px;
+          margin: 20px;
+        }
+        .main__text-one__item {
+          width: 225px;
+        }
+        .main__text-one__item-img{
+            width: 80px;
+        }
+        .main__text-one__item div{
+            font-size: 20px;
+        }
+        .main__text-one__item p{
+            font-size: 13px;
+        }
+        .main-delivery{
+            margin: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-logo">
+        <img class="main-logo-img" src="./images/logo.webp" alt="logo" />
+      </div>
+      <div class="content">
+        <div class="main-text">
+          Парфуми Carolina Herrera подарують вам відчуття легкості, доглянутості
+          та елегантності! Інтернет-магазин &quot;Бутік Парфум&quot; пропонує
+          великий асортимент парфумерних композицій на будь-який смак. Гарантія
+          якості, доступні ціни та приємні бонуси.
+        </div>
+        <img
+          src="./images/26362388531567.webp"
+          alt="image"
+          class="content-img"
+        />
+        <div class="content-carolina">Carolina Herrera</div>
+      </div>
+      <p class="main__text-one">
+        Чому клієнти вважають за краще купити парфуми Carolina Herrera в
+        інтернет-магазині «Бутік Парфум»
+      </p>
+      <div class="main__text-one-list">
+        <div class="main__text-one__item">
+          <img
+            class="main__text-one__item-img"
+            src="./images/diverse.png"
+            alt="diverse"
+          />
+          
+          <div>Різноманітний асортимент</div>
+          <p>
+            У каталозі представлено більше 30 парфумерних ароматів Carolina
+            Herrera у флаконах різних об’ємів. Кожен покупець зможе підібрати
+            оптимальний варіант на свій смак чи на подарунок. Особливим попитом
+            користуються також
+            <a href="https://butikparfum.com.ua/bestselery-chloe/"
+              >бестселери парфумованої води від Chloe (Хлоє)
+            </a>
+          </p>
+        </div>
+        <div class="main__text-one__item">
+          <img
+            class="main__text-one__item-img"
+            src="./images/Excellent-quality.png"
+            alt="Excellent-quality"
+          />
+          <div>Відмінна якість</div>
+          <p>
+            У нашому інтернет-магазині представлена сертифікована парфумерна
+            продукція високої якості. Купуючи у нас Carolina Herrera духи
+            чоловічі чи жіночі, ви можете бути впевнені, що отримуєте 100%
+            оригінальний брендовий продукт
+          </p>
+        </div>
+        <div class="main__text-one__item">
+          <img
+            class="main__text-one__item-img"
+            src="./images/prices.png"
+            alt="prices"
+          />
+          <div>Прийнятні ціни</div>
+          <p>
+            Ціни на Carolina Herrera парфуми у нас максимально вигідні для
+            покупців, що оптимально відповідають якості. Завдяки прямим
+            закупівлям у офіційних дистриб&#39;юторів, продажу через інтернет,
+            роботі без посередників ми маємо можливість підтримувати лояльну
+            цінову політику
+          </p>
+        </div>
+        <div class="main__text-one__item">
+          <img
+            class="main__text-one__item-img"
+            src="./images/bonus.png"
+            alt="bonus"
+          />
+          <div>Програма бонусів</div>
+          <p>
+            Постійні клієнти одержують знижку на наступне замовлення, розмір
+            якої залежить від загальної суми всіх замовлень – діє накопичувальна
+            система бонусів. Для зареєстрованих користувачів сайту розроблено
+            дисконтну програму. У каталозі багато парфумів Carolina Herrera
+            представлені зі знижками - не пропустіть вигідних акцій
+          </p>
+        </div>
+        <div class="main__text-one__item">
+          <img
+            class="main__text-one__item-img"
+            src="./images/fast-shipping.png"
+            alt="fast-shipping"
+          />
+          <div>Швидке відправлення</div>
+          <p>
+            Всі парфуми та
+            <a href="https://butikparfum.com.ua/bestselery-chopard/"
+              >бестселери парфумованої води від Chopard (Шопард)</a
+            >
+            є в наявності, тому ми максимально швидко обробляємо ваші замовлення
+            і практично відразу робимо відправки. Доставка по Україні
+            здійснюється протягом лічених днів
+          </p>
+        </div>
+        <div class="main__text-one__item">
+          <img
+            class="main__text-one__item-img"
+            src="./images/consultation support.png"
+            alt="consultation support"
+          />
+          <div>Консультаційна підтримка</div>
+          <p>
+            Досвідчені менеджери знають все про парфумерну продукцію, добре
+            орієнтуються в асортименті і можуть проконсультувати покупців з усіх
+            питань. Ми допоможемо вибрати Carolina Herrera духи жіночі або
+            чоловічі, враховуючи всі ваші побажання
+          </p>
+        </div>
+      </div>
+      <img
+        class="content-img"
+        src="./images/360_F_658871707_wFzOOLc7seDjq8ieOi6fgPExuXW16BoE.jpg"
+        alt="content"
+      />
+      <div class="main-delivery">
+        <p class="main__text-two">
+          Як купити духи Carolina Herrera: етапи співпраці з «Бутік Парфум»
+        </p>
+        <ul class="main-delivery-list">
+          <li class="main-delivery-item">
+            <div class="main-delivery-title">Етап оформлення</div>
+            <img
+              src="./images/basket.png"
+              alt="images"
+              class="main-delivery-img"
+            />
+            <p class="main-delivery-text">
+              Зробіть замовлення через кошик сайту або зв&#39;яжіться з нами у
+              Viber для замовлення парфумерії.
+            </p>
+          </li>
+          <li class="main-delivery-item">
+            <div class="main-delivery-title">Етап підтвердження</div>
+            <img
+              src="./images/confirmation.png"
+              alt="images"
+              class="main-delivery-img"
+            />
+            <p class="main-delivery-text">
+              Менеджер миттєво обробляє та підтверджує замовлення через Viber,
+              погоджує всі деталі.
+            </p>
+          </li>
+          <li class="main-delivery-item">
+            <div class="main-delivery-title">Етап оплати</div>
+            <img
+              src="./images/money.png"
+              alt="images"
+              class="main-delivery-img"
+            />
+            <p class="main-delivery-text">
+              Способи оплати – повна оплата на картку або часткова передоплата
+              200 грн, залишок – при отриманні у перевізника.
+            </p>
+          </li>
+          <li class="main-delivery-item">
+            <div class="main-delivery-title">Етап доставки</div>
+            <img
+              src="./images/delivery.png"
+              alt="images"
+              class="main-delivery-img"
+            />
+            <p class="main-delivery-text">
+              Доставка товарів здійснюється у всі населені пункти України через
+              транспортні компанії Нова пошта та Укрпошта.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="faq">
+        <div class="main-text-three">Найчастіші питання від покупців</div>
+        <div class="faq-item">
+          <input type="checkbox" class="faq-input" id="faq_1" />
+          <label class="faq-title" for="faq_1"
+            >Які ароматичні ноти часто присутні у парфумерії від Carolina
+            Herrera?
+          </label>
+
+          <div class="faq-text">
+            <p>
+              Парфумовані води Carolina Herrera часто містять ароматичні ноти,
+              такі як білий жасмин, троянда, сандалове дерево, гармонія та інші.
+              Вони створюють вишукані та чуттєві аромати.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" class="faq-input" id="faq_2" />
+          <label class="faq-title" for="faq_2"
+            >Які враження чи емоції можуть викликати аромати від Carolina
+            Herrera?
+          </label>
+
+          <div class="faq-text">
+            <p>
+              Аромати від Carolina Herrera можуть викликати елегантність, розкіш
+              та жіночність. Вони надають почуття стилю та класу.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" class="faq-input" id="faq_3" />
+          <label class="faq-title" for="faq_3"
+            >Як ви оцінюєте стійкість парфумів Carolina Herrera на шкірі?
+          </label>
+
+          <div class="faq-text">
+            <p>
+              Духи Carolina Herrera славляться гарною стійкістю на шкірі. Вони
+              можуть залишатися протягом тривалого часу, забезпечуючи стійкий
+              аромат.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <input type="checkbox" class="faq-input" id="faq_4" />
+          <label class="faq-title" for="faq_4">
+            Які особливі риси та характеристики ароматів Carolina Herrera
+            роблять їх унікальними?
+          </label>
+
+          <div class="faq-text">
+            <p>
+              Аромати від Carolina Herrera дивують своєю вишуканістю та
+              оригінальністю. Вони часто відображають дух моди та сучасний
+              стиль, роблячи їх унікальними та незабутніми. Рекомендуємо
+              спробувати
+              <a
+                href="https://butikparfum.com.ua/original-carolina-herrera-very-good-girl-80ml-karolina-errera-veri-gud-gerl-ochen-khoroshaya-devochka/"
+              >
+                оригінал Carolina Herrera Very Good Girl .</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
